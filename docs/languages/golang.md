@@ -1,4 +1,7 @@
-# Golang
+---
+id: golang
+title: Golang
+---
 
 ## Useful Articles
 

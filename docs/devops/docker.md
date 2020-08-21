@@ -1,4 +1,7 @@
-# Docker
+---
+id: docker
+title: Docker
+---
 
 ## Build Image:
 ```
@@ -16,4 +19,3 @@ docker run -it -v $(pwd):/app -w /app spark python3 main.py
 xhost +
 docker run -it -v $(pwd):/app -e DISPLAY=docker.for.mac.host.internal:0 -w /app spark python3 main.py
 ```
-

@@ -1,4 +1,7 @@
-# Kubernetes
+---
+id: kubernetes
+title: Kubernetes
+---
 
 ## Commands
 
@@ -18,11 +21,10 @@ kubectl get services
 ```
 
 ```
-kubectl delete service ontology-dashboard
-kubectl delete deployment ontology-dashboard
+kubectl delete service dashboard
+kubectl delete deployment dashboard
 
-
-kubectl scale deployment ontology-dashboard --replicas=0 
+kubectl scale deployment dashboard --replicas=0
 
 kubectl apply -f app.yaml
 ```

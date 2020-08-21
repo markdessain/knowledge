@@ -1,4 +1,7 @@
-# Git
+---
+id: git
+title: Git
+---
 
 ## Commands
 
