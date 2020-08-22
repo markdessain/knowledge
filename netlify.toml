@@ -3,5 +3,5 @@
   command = "npm run build"
 
 [[redirects]]
-  from = "/"
+  from = "/*"
   to = "/docs"
