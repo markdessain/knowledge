@@ -4,9 +4,10 @@ module.exports = {
       'introduction'
     ],
     'Data': [
+      'data/principles',
       'data/dbt',
       'data/spark',
-      'data/notebooks',
+      'data/jupyter',
     ],
     'Languages': [
       'languages/golang',

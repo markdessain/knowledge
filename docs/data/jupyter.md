@@ -1,6 +1,6 @@
 ---
-id: notebooks
-title: Notebooks
+id: jupyter
+title: Jupyter
 ---
 
 Notebooks should not be used for production, a few articles saying why:
