@@ -3,11 +3,21 @@ id: spark
 title: Spark
 ---
 
-## Partitions and Clusters
+## Introduction
+
+> Apache Spark™ is a unified analytics engine for large-scale data processing.
+>
+> https://spark.apache.org/
+
+## Concepts
+
+### Partitions and Clusters
 
 ...
 
-## Displaying Dataframes in Jupyter lab
+## Snippets
+
+### Displaying Dataframes in Jupyter lab
 
 To install qgrid in Jupyter lab we need to do:
 

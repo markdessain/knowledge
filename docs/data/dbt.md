@@ -3,19 +3,23 @@ id: dbt
 title: Data Build Tool (DBT)
 ---
 
-## introduction
+## Introduction
 
-https://docs.getdbt.com/
+> dbt (data build tool) enables analytics engineers to transform data in their warehouses by simply writing select statements. dbt handles turning these select statements into tables and views.
+>
+> https://docs.getdbt.com/docs/introduction
 
-## Using Spark
+## Executors
 
-### Local Development
+### Spark
 
-Download spark-2.4.6-bin-hadoop2.7
+#### Local Development
 
-Run the thrift server:
+For local development a thrift server has to be running before starting DBT.
 
 ```bash
+Download spark-2.4.6-bin-hadoop2.7
+
 ~/bin/spark-2.4.6-bin-hadoop2.7/sbin/start-thriftserver.sh --driver-memory 5G --total-executor-cores 4
 ```
 

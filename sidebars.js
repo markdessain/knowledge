@@ -1,7 +1,8 @@
 module.exports = {
   someSidebar: {
     'Welcome': [
-      'introduction'
+      'getting-started',
+      'books-blogs-and-more',
     ],
     'Data': [
       'data/principles',
