@@ -11,12 +11,14 @@ module.exports = {
       'data/jupyter',
     ],
     'Languages': [
-      'languages/golang',
       'languages/python',
+      'languages/sql',
+      'languages/golang',
     ],
     'Devops': [
       'devops/azure',
       'devops/docker',
+      'devops/nomad',
       'devops/kubernetes',
       'devops/git',
     ],
