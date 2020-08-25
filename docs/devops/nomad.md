@@ -72,7 +72,7 @@ job "docs" {
       driver = "raw_exec"
 
       config {
-        command = ".../go-web-server"
+        command = <PATH>/go-web-server"
       }
 
       resources {
