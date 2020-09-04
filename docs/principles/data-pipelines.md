@@ -97,7 +97,7 @@ def compute(input_1):
 
 #### DBT
 
-[DBT](./dbt) runs on top of SQL but instead uses templates to compile statements. The raw SQL now just includes references to where data comes from instead of hard coding tales.
+[DBT](../data/dbt) runs on top of SQL but instead uses templates to compile statements. The raw SQL now just includes references to where data comes from instead of hard coding tales.
 
 Static analysis can be done to work out a graph showing how the statements link together.
 
