@@ -40,6 +40,7 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/markdessain/knowledge/edit/master/',
+          remarkPlugins: [require('remark-mermaid')],
         },
         // blog: {
         //   showReadingTime: true,
