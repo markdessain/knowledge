@@ -4,15 +4,17 @@ module.exports = {
       'getting-started',
       'books-blogs-and-more',
     ],
+    'Principles': [
+      'principles/data-pipelines',
+      'principles/events',
+    ],
     'Data': [
-      'data/principles',
       'data/dbt',
       'data/spark',
       'data/jupyter',
       'data/neo4j',
       'data/postgresql',
       'data/kafka',
-      'data/event-streams',
     ],
     'Languages': [
       'languages/python',

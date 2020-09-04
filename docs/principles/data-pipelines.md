@@ -1,6 +1,6 @@
 ---
-id: principles
-title: Principles
+id: data-pipelines
+title: Data Pipelines
 ---
 
 ## Introduction
@@ -62,7 +62,7 @@ Idempotency allows for work to be run multiple times, for example in case of fai
 
 Lineage is important to build trust in the data processing. It provides a high level view of what is going on in the system. Even if a user is not technical or interested in the fine details, lineage and answer questions of where data is coming from?, where is it going?, what are the source? and what are the syncs?
 
-Lineage can be constructed in different ways but are all driven off metadata. Some examples are as follows.
+Lineage can be constructed automatically in different ways but should be driven off metadata. Some examples are as follows.
 
 #### Foundry
 

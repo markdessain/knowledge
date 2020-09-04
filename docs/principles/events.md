@@ -1,15 +1,13 @@
 ---
-id: event-streams
-title: Event Streams
+id: events
+title: Events
 ---
 
 import Mermaid from '@theme/Mermaid';
 
 ## Introduction
 
-An event stream is a timeline of activity for a given object. A common example is a user click stream which includes all the actions performed by a given user.
-
-The following is an example of how a user could browse through a website:
+Events are the most raw level of data that can be captured to display activity for a given entity. They describe what actions have been taken and when they occurred. A common example is a user click stream which is a timeline of all the actions performed by a given user on a website. Here is an example of how a user could browse through the website: (each box is an event)
 
 <div>
 <Mermaid chart={`
@@ -33,9 +31,6 @@ The following is an example of how a user could browse through a website:
     gap3-->pv3;
     pv3-->purchase;
     purchase-->gap4;
-    subgraph First event
-      pv1
-    end
     subgraph Gap in events, could be hours or days
       gap1
       gap2
@@ -47,11 +42,30 @@ The following is an example of how a user could browse through a website:
 `}/>
 </div>
 
-This is the most raw data you can get and can be used to describe a users journey.
+## Identity
+
+Each event will have an `event_id` which allows each event to be uniquely identified. Single events by themselves do not hold much value, so these groupings are important to gain insight. Extra ids can exist to group together events. Using the above example events could be grouped by `user_id`, `visit_id`, `session_id`, `device_id` among others.
+
+
+
+If the data was stored in a SQL database the following query could get you the above timeline for a single user:
+
+```sql
+SELECT
+  event_id,
+  event_type,
+  event_timestamp
+FROM
+  events
+WHERE
+  user_id = ...
+ORDER BY
+  event_timestamp
+```
 
 ## Deriving Business Concepts
 
-From the raw events extra concepts can be derived, it just requires a set of business rules to define the concepts. Concepts can be split into several categories.
+From the raw events extra concepts can be derived, it just requires a set of business rules to define the concepts.
 
 ### The Occurrence of Events
 
@@ -89,12 +103,9 @@ An event that is not present will trigger users to be part of a group, such as a
 `}/>
 </div>
 
-
-
 ### Gaps Between Events
 
 The time between events could separate events into groups, such as page views with a gap of 30 minutes or more are part of separate sessions.
-
 
 <div>
 <Mermaid chart={`
@@ -124,14 +135,7 @@ The time between events could separate events into groups, such as page views wi
 
 </div>
 
-## A
-## A
-## A
-## A
-## A
-## A
-## A
-## A
-## A
-## A
-## A
+## Schema Registry
+
+
+## Stitching Events Together
