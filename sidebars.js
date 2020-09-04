@@ -9,6 +9,10 @@ module.exports = {
       'data/dbt',
       'data/spark',
       'data/jupyter',
+      'data/neo4j',
+      'data/postgresql',
+      'data/kafka',
+      'data/event-streams',
     ],
     'Languages': [
       'languages/python',
@@ -21,6 +25,10 @@ module.exports = {
       'devops/nomad',
       'devops/kubernetes',
       'devops/git',
+    ],
+    'Operating System': [
+      'operating-system/macos',
+      'operating-system/ubuntu',
     ],
   },
 };
