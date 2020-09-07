@@ -17,28 +17,16 @@ Events are the most raw level of data that can be captured to display activity f
     login([Login]);
     search([Search]);
     gap1([...]);
-    gap2([...]);
-    gap3([...]);
     pv3([Page View]);
     purchase([Purchase]);
-    gap4([...]);
+    gap2([...]);
     pv1-->pv2;
     pv2-->login;
     login-->search;
     search-->gap1;
-    gap1-->gap2;
-    gap2-->gap3;
-    gap3-->pv3;
+    gap1-->pv3;
     pv3-->purchase;
-    purchase-->gap4;
-    subgraph Gap in events, could be hours or days
-      gap1
-      gap2
-      gap3
-    end
-    subgraph Achieved a goal
-      purchase
-    end
+    purchase-->gap2;
 `}/>
 </div>
 
@@ -135,7 +123,16 @@ The time between events could separate events into groups, such as page views wi
 
 </div>
 
+## Stitching Events Together
+
+The above timelines of events have been joined together with a consistent id. In the example of a click stream a cookie could work as a way to join all events in a single session together.
+
+If a user uses two different devices with two different cookies they will appear as different timelines. In this case the timelines can be joined together once we know they belong to the same user.
+
 ## Schema Registry
 
+There should be a list of all possible events along with the schemas for each events. Any producer of events should validate the schema before publishing then consumers can then know what to expect. It acts as a API contract between different unconnected services.
 
-## Stitching Events Together
+Once a schema has been published it cannot be changed as downstream systems maybe relying on it.
+
+There should be both major and minor versions. A minor change would be adding on an additional field where a major change would be updating a type of an existing field or removing a field all together.
