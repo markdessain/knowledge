@@ -1,6 +1,6 @@
 ---
-id: introduction
-title: Introduction
+id: getting-started
+title: Getting Started
 ---
 
 Starting in August 2020 I have begun curating useful information about technologies and systems I have worked on. This could be links to interesting articles, guides to getting started or other similar material.
