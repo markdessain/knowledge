@@ -16,6 +16,9 @@ module.exports = {
       'data/postgresql',
       'data/kafka',
     ],
+    'APIs': [
+      'api/spring-boot',
+    ],
     'Languages': [
       'languages/python',
       'languages/sql',
