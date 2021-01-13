@@ -15,6 +15,40 @@ title: Spark
 
 ...
 
+## Data Lakes
+
+### Azure Datalake Gen1
+
+To be able to read data from the Azure Datalake the following commands can be run.
+
+Personal user account:
+
+Get the client id and refresh token
+
+```bash
+az login
+cat ~/.azure/accessTokens.json | jq .
+```
+
+```python
+spark.conf.set("fs.adl.oauth2.access.token.provider.type", "RefreshToken")
+spark.conf.set("fs.adl.oauth2.client.id", "<AZURE CLIENT>")
+spark.conf.set("fs.adl.oauth2.refresh.token", "<REFRESH TOKEN>")
+
+spark.read.format("avro").load("adl://<DATALAKE>.azuredatalakestore.net/directory/dataframe").show()
+```
+
+Service Principle:
+
+```python
+spark.conf.set("fs.adl.oauth2.access.token.provider.type", "ClientCredential")
+spark.conf.set("fs.adl.oauth2.client.id", "<AZURE CLIENT>")
+spark.conf.set("fs.adl.oauth2.credential", "<AZURE SECRET>")
+spark.conf.set("fs.adl.oauth2.refresh.url", "https://login.microsoftonline.com/<TENANT ID>/oauth2/token")
+
+spark.read.format("avro").load("adl://<DATALAKE>.azuredatalakestore.net/directory/dataframe").show()
+```
+
 ## Snippets
 
 ### Displaying Dataframes in Jupyter lab
