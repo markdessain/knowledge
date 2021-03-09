@@ -11,6 +11,7 @@ module.exports = {
     'Data': [
       'data/dbt',
       'data/spark',
+      'data/databricks',
       'data/jupyter',
       'data/neo4j',
       'data/postgresql',
