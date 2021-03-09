@@ -107,7 +107,7 @@ curl https://westeurope.azuredatabricks.net/api/2.0/secrets/put \
 Create a Python file
 
 ```python
-# main.property
+# main.py
 import os
 from pyspark.sql import SparkSession
 
