@@ -56,9 +56,6 @@ azToken=$(jq .accessToken -r <<< "$token_response")
 This first setup just needs to be run once and will make sure that the jobs and secrets are in place. You could save details such as the datalake connection details.
 
 ```bash
-
-LOCATION=westeurope
-
 DATALAKE_USERNAME=<CLIENT_ID>
 DATALAKE_PASSWORD=<CLIENT_SECRET>
 
@@ -101,11 +98,24 @@ Create a Python file
 
 ```python
 # main.property
-print("Hello World")
+import os
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
+spark.conf.set("fs.adl.oauth2.access.token.provider.type", "ClientCredential")
+spark.conf.set("fs.adl.oauth2.client.id", os.environ["DATALAKE_USERNAME"])
+spark.conf.set("fs.adl.oauth2.credential", os.environ["DATALAKE_SECRET"])
+spark.conf.set("fs.adl.oauth2.refresh.url", "https://login.microsoftonline.com/<TENANT_ID>/oauth2/token")
+
+spark.sql("""
+    SELECT COUNT(*)
+    FROM orc.`adl://<DATALAKE_NAME>.azuredatalakestore.net/<PATH>`
+""").show()
+
 ```
 
 and a job definition file:
-
 
 ```python
 #job-definition.json
@@ -163,7 +173,7 @@ curl https://westeurope.azuredatabricks.net/api/2.0/dbfs/put \
             -H "X-Databricks-Azure-SP-Management-Token:$azToken" \
             -H "X-Databricks-Azure-Workspace-Resource-Id:$wsId"
 
-JSON='{"job_id":"'$jobId'", "new_settings":'$(cat job-definition.json)'}'
+JSON='{"job_id":"'$JOB_ID'", "new_settings":'$(cat job-definition.json)'}'
 curl https://westeurope.azuredatabricks.net/api/2.0/jobs/reset \
             -X POST \
             -H 'Content-Type: application/json' \
