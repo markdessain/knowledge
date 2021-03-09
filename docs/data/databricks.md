@@ -116,13 +116,9 @@ spark = SparkSession.builder.getOrCreate()
 spark.conf.set("fs.adl.oauth2.access.token.provider.type", "ClientCredential")
 spark.conf.set("fs.adl.oauth2.client.id", os.environ["DATALAKE_USERNAME"])
 spark.conf.set("fs.adl.oauth2.credential", os.environ["DATALAKE_SECRET"])
-spark.conf.set("fs.adl.oauth2.refresh.url", "https://login.microsoftonline.com/<TENANT_ID>/oauth2/token")
+spark.conf.set("fs.adl.oauth2.refresh.url", os.environ["REFRESH_URL"])
 
-spark.sql("""
-    SELECT COUNT(*)
-    FROM orc.`adl://<DATALAKE_NAME>.azuredatalakestore.net/<PATH>`
-""").show()
-
+spark.read.csv(os.environ["DATALAKE_PATH"] + "/<PATH>").show()
 ```
 
 and a job definition file:
