@@ -5,6 +5,16 @@ title: Databricks
 
 ## Introduction
 
+Databricks is a managed spark environment. It allows both exploration of data and running scheduled jobs. The use of a UI can be used using a user account but databricks also has great service principle access to allow CI pipelines to shine.
+
+- https://databricks.com/
+- https://docs.databricks.com/dev-tools/api/latest/index.html#apis
+
+Databricks exists in all the major cloud providers and provides the same abilities and functionality, but this guide will focus on the Azure flavour.
+
+- https://azure.microsoft.com/en-us/services/databricks/
+- https://cloud.google.com/databricks
+- https://aws.amazon.com/quickstart/architecture/databricks/
 
 ## Azure
 
@@ -65,7 +75,7 @@ jobId=$(curl https://westeurope.azuredatabricks.net/api/2.0/jobs/create \
             -H "Authorization: Bearer $token" \
             -H "X-Databricks-Azure-SP-Management-Token:$azToken" \
             -H "X-Databricks-Azure-Workspace-Resource-Id:$wsId" \
-            -d '{"name": "mdessain-test", "new_cluster": {"num_workers": 0, "spark_version": "7.5.x-scala2.12", "node_type_id": "Standard_D3s_v2"}}' | jq -r .job_id)
+            -d '{"name": "<JOB_NAME>", "new_cluster": {"num_workers": 0, "spark_version": "7.5.x-scala2.12", "node_type_id": "Standard_D3s_v2"}}' | jq -r .job_id)
 
 curl https://westeurope.azuredatabricks.net/api/2.0/secrets/scopes/create \
             -X POST  \
@@ -120,7 +130,7 @@ and a job definition file:
 ```python
 #job-definition.json
 {
-  "name": "mdessain-test",
+  "name": "<JOB_NAME>",
   "new_cluster": {
     "spark_version": "7.5.x-scala2.12",
     "spark_conf": {
