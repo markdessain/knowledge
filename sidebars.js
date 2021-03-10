@@ -25,6 +25,9 @@ module.exports = {
       'languages/sql',
       'languages/golang',
     ],
+    'Tools': [
+      'tools/jq',
+    ],
     'Devops': [
       'devops/azure',
       'devops/docker',
