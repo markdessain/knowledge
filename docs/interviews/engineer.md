@@ -6,7 +6,68 @@ title: Engineer
 
 ## Introduction
 
-## Questions
+
+## Desgin Questions
+
+### Microservices
+
+> What are some of the advantages of using micro services?
+
+- Services can be reused in different contexts
+- Services can easily be replaced
+- Services can scale based on their own needs
+
+> What are some of the disadvantages of using micro services?
+
+- Microservices Are More Complex.
+  - A mixtures of programming languages in services
+  - Data consistency between services
+  - Large amount of refactoring from an existing monolith
+  - Integration testing becomes much harder and with extra overhead when ensuring the services work well together.
+  - Duplication of designing how the deploy and manage the services
+  - The number of processes can grow exponentially when load balancing and messaging middleware are considered
+- Microservices Require Cultural Changes
+- Microservices Are Often More Expensive Than Monoliths
+  - High number of remote call between services going over a network can be slower and add in latency
+  - More checks needed to handle failures and timeouts
+- Microservices Can Present Security Threats
+  - More traffic is exposed to the network as services communicate with each other
+  - Higher volume of data been shared
+- Requires excellent API management and documentation
+- Often services scaling ability is tightly coupled
+- https://www.tiempodev.com/blog/disadvantages-of-a-microservices-architecture/
+- https://www.digitalroadmap.management/blog/2020/7/17/advantages-and-disadvantages-of-microservices
+
+## Language Questions
+
+### Java
+
+
+> What is the latest version of Java?
+
+- Java 11 for Long Term Support - September 2018
+- Java 15 - September 2020
+
+> Name some of the most recent changes to the Java programming language since Java 8.
+
+- Text Blocks
+- Sealed Classes
+- Records
+- Switch Expressions
+- `var` for local variables
+- Lambda expressions
+
+### Springboot
+
+> Can you name some of the
+
+
+> What does the Spring Boot Actuator do?
+
+
+
+
+## Programming Questions
 
 ### Program Flow
 
