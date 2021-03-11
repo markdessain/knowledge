@@ -3,11 +3,9 @@ id: engineer
 title: Engineer
 ---
 
-
 ## Introduction
 
-
-## Desgin Questions
+## Design Questions
 
 ### Microservices
 
@@ -42,8 +40,7 @@ title: Engineer
 
 ### Java
 
-
-> What is the latest version of Java?
+> What is the latest version of Java? (As of February 2021)
 
 - Java 11 for Long Term Support - September 2018
 - Java 15 - September 2020
@@ -57,15 +54,25 @@ title: Engineer
 - `var` for local variables
 - Lambda expressions
 
-### Springboot
+### Spring
 
-> Can you name some of the
+> Spring is split into a number of different projects. Can you name a few of the projects you have used?
 
+- Spring Data
+- Spring Cloud
+- Spring Security
+- Spring Session
+- https://spring.io/projects/spring-boot
+
+> Can you name some of the components that make up Spring Cloud?
+
+- Spring Cloud Azure
+- Spring Cloud Amazon Web Services
+- Spring Cloud Kubernetes
 
 > What does the Spring Boot Actuator do?
 
-
-
+- It includes a number of additional features that help us to monitor and manage the Spring Boot application
 
 ## Programming Questions
 
