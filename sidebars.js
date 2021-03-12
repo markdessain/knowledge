@@ -23,6 +23,7 @@ module.exports = {
     'Languages': [
       'languages/python',
       'languages/sql',
+      'languages/scala',
       'languages/golang',
     ],
     'Tools': [
