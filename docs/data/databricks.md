@@ -262,7 +262,7 @@ for c in iter(lambda: process.stdout.read(1), b''):
     sys.stdout.buffer.write(c)
 ```
 
-```golang
+```go
 // main.go
 package main
 
