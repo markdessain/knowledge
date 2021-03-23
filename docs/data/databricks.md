@@ -211,7 +211,7 @@ def load(spark):
     print(spark)
 ```
 
-This script will create a Python file which contains the above tw files. It will add them onto the Python path and then call `main.py`
+This script will create a Python file which contains the above two files. It will add them onto the Python path and then call `main.py`
 
 ```python
 # create_artifact.py
@@ -246,3 +246,44 @@ python3 ./bin/main.py
 ```
 
 You can then follow the [Regular Deployment](#regular-deployment) listed above using the newly created `main.py` artifact.
+
+
+## Running Non Spark Applications (Experimental)
+
+As well as running Python and Scala jobs in Databricks. Other languages and scripts can be compiled and run as well. For example, if we had a golang application which we want to run as part of our pipeline.
+
+```python
+# main.py
+import subprocess
+import sys
+
+process = subprocess.Popen(sys.argv[1:], stdout=subprocess.PIPE)
+for c in iter(lambda: process.stdout.read(1), b''):
+    sys.stdout.buffer.write(c)
+```
+
+```golang
+// main.go
+package main
+
+import (
+  "fmt"
+  "flag"
+)
+
+func main() {
+  var foo bool
+  flag.BoolVar(&foo, "foo", false, "foo")
+  flag.Parse()
+  fmt.Println(foo)
+}
+```
+ We can compile it for Linux and upload it to DBFS and ask Python to execute it as follows:
+
+```bash
+GOOS=linux go build main.go
+databricks fs cp --overwrite ./main.py dbfs:/tmp/main.py
+databricks fs cp --overwrite ./main dbfs:/tmp/main
+
+databricks  jobs run-now --job-id <JOB_ID> --spark-submit-params '["dbfs:/tmp/main.py", "/dbfs/tmp/main", "-foo"]'
+```
