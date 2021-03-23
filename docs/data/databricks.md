@@ -102,7 +102,7 @@ curl https://westeurope.azuredatabricks.net/api/2.0/secrets/put \
             -d '{"scope": "databricks-secrets", "key": "datalake-password", "string_value": "'$DATALAKE_PASSWORD'"}'
 ```
 
-## Sample Application
+## Sample Single File Application
 
 Create a Python file
 
@@ -188,3 +188,61 @@ curl https://westeurope.azuredatabricks.net/api/2.0/jobs/reset \
             -H "X-Databricks-Azure-Workspace-Resource-Id:$wsId" \
             -d "$JSON"
 ```  
+
+## Multi file Deployment (Experimental)
+
+The regular deployments allow a single script to be uploaded and executed however you will not be able to import anything locally if the code is split into seperate files. One option is to create `.egg` or `.wheel` files which can be uploaded to a package repository like [pypi](https://pypi.org/) and then installed as regular python packages.
+
+Another option is to turn the collection of files into a single file by compressing them into a zip. For example if there are the following two files:
+
+```python
+# src/main.py
+from pyspark.sql import SparkSession
+from customer import load
+
+spark = SparkSession.builder.getOrCreate()
+
+load(spark)
+```
+
+```python
+# src/customer.py
+def load(spark):
+    print(spark)
+```
+
+This script will create a Python file which contains the above tw files. It will add them onto the Python path and then call `main.py`
+
+```python
+# create_artifact.py
+import shutil
+import tempfile
+
+with tempfile.NamedTemporaryFile(suffix='.zip') as f:
+    shutil.make_archive(f.name[:-4], 'zip', './src')
+    with open("./bin/main.py", "w") as f2:
+        f2.write("data=[")
+        for line in f.readlines():
+            f2.write(str(line))
+        f2.write("] \n")
+
+        f2.write("\n")
+        f2.write("import tempfile \n")
+        f2.write("with tempfile.NamedTemporaryFile() as f: \n")
+        f2.write("    for line in data: \n")
+        f2.write("        f.write(line) \n")
+        f2.write("    f.flush() \n")
+        f2.write("    print('Runner') \n")
+        f2.write("    import sys \n")
+        f2.write("    sys.path.insert(0, f.name) \n")
+        f2.write("    import main \n")
+```
+
+So we can run the following:
+
+```bash
+python3 ./create_artifact.py
+python3 ./bin/main.py
+```
+
+You can then follow the [Regular Deployment](#regular-deployment) listed above using the newly created `main.py` artifact.
