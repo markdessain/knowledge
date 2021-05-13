@@ -191,9 +191,11 @@ curl https://westeurope.azuredatabricks.net/api/2.0/jobs/reset \
 
 ## Multi file Deployment (Experimental)
 
-The regular deployments allow a single script to be uploaded and executed however you will not be able to import anything locally if the code is split into seperate files. One option is to create `.egg` or `.wheel` files which can be uploaded to a package repository like [pypi](https://pypi.org/) and then installed as regular python packages.
+The regular deployments allow a single script to be uploaded and executed however you will not be able to import anything locally if the code is split into separate files. One option is to create `.egg` or `.wheel` files which can be uploaded to a package repository like [pypi](https://pypi.org/) and then installed as regular python packages.
 
-Another option is to turn the collection of files into a single file by compressing them into a zip. For example if there are the following two files:
+Another is to add our src code to the `site_packages` folder in databricks. It has to use the `spark_submit_task` task type.
+
+The following two files will form the application
 
 ```python
 # src/main.py
@@ -211,41 +213,60 @@ def load(spark):
     print(spark)
 ```
 
-This script will create a Python file which contains the above two files. It will add them onto the Python path and then call `main.py`
-
-```python
-# create_artifact.py
-import shutil
-import tempfile
-
-with tempfile.NamedTemporaryFile(suffix='.zip') as f:
-    shutil.make_archive(f.name[:-4], 'zip', './src')
-    with open("./bin/main.py", "w") as f2:
-        f2.write("data=[")
-        for line in f.readlines():
-            f2.write(str(line))
-        f2.write("] \n")
-
-        f2.write("\n")
-        f2.write("import tempfile \n")
-        f2.write("with tempfile.NamedTemporaryFile() as f: \n")
-        f2.write("    for line in data: \n")
-        f2.write("        f.write(line) \n")
-        f2.write("    f.flush() \n")
-        f2.write("    print('Runner') \n")
-        f2.write("    import sys \n")
-        f2.write("    sys.path.insert(0, f.name) \n")
-        f2.write("    import main \n")
-```
-
-So we can run the following:
+The following three files will form the cluster and job setup
 
 ```bash
-python3 ./create_artifact.py
-python3 ./bin/main.py
+# cluster/init.sh
+/databricks/python3/bin/pip install -r /dbfs/cluster/requirements.txt
+cp -r /dbfs/src/* /databricks/python3/lib/$(ls /databricks/python3/lib/)/site-packages
 ```
 
-You can then follow the [Regular Deployment](#regular-deployment) listed above using the newly created `main.py` artifact.
+```bash
+# cluster/requirements.txt
+dagster==0.11.7
+```
+
+```bash
+# job/job_1.json
+{
+  "name": "Job 1",
+  "new_cluster": {
+    ...
+    "init_scripts": [
+      {
+        "dbfs": {
+          "destination": "dbfs:/cluster/init.sh"
+        }
+      }
+    ],
+    ...
+  },
+  "spark_submit_task": {
+    "parameters": [
+      "dbfs:/src/main.py"
+    ]
+  },
+}
+```
+
+The following file will do a deployment from the ci pipeline
+
+```bash
+# deploy.sh
+
+echo "Updating Job"
+databricks jobs reset --job-id $JOB_ID --json-file "./jobs/job_1.json"
+echo ""
+
+echo "Uploading Cluster Files"
+databricks fs cp --overwrite --recursive ./cluster dbfs:/cluster
+echo ""
+
+echo "Uploading Source Files"
+databricks fs cp --overwrite --recursive ./src dbfs:/src
+echo ""
+```
+
 
 
 ## Running Non Spark Applications (Experimental)
