@@ -1,6 +1,5 @@
 ---
 title: WTF?!? 🦊
-theme: ./base.css
 highlightTheme: github
 revealOptions:
     transition: 'slide'
@@ -35,12 +34,12 @@ Topics range from technical to business and also includes personal interests.
 
 ---
 
-- WTF is *Apache Airflow*?  
-- WTF is *Supply Chain Management*?
-- WTF does *\<insert three letter acronym\>* mean?
-- WTF does the *Head of Data Engineering* do day to day?
-- WTF is the *Queens Gambit* move in chess?
-- WTF is ...
+- WT🦊 is *Apache Airflow*?  
+- WT🦊 is *Supply Chain Management*?
+- WT🦊 does *\<insert three letter acronym\>* mean?
+- WT🦊 does the *Head of Data Engineering* do day to day?
+- WT🦊 is the *Queens Gambit* move in chess?
+- WT🦊 is ...
 
 ---
 
