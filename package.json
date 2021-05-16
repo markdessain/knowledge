@@ -5,7 +5,8 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && reveal-md ./slides --static ./build/slides && cp ./slides/base.css ./build/slides/dist/theme/black.css",
+    "slides": "reveal-md ./slides --static ./build/slides && cp ./slides/base.css ./build/slides/dist/theme/black.css",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve"
