@@ -117,11 +117,42 @@ FROM {{ ref("a") }}
 JOIN {{ ref("b") }}
 ```
 
-Airflow
+#### Dagster
+
+```python
+@solid
+def a() -> Dataframe:
+    ...
+```
+
+```python
+@solid
+def b() -> Dataframe:
+    ...
+```
+
+```python
+@solid
+def c(a: DataFrame, b: DataFrame) -> Dataframe:
+    ...
+```
+
+```python
+@pipeline
+def runner():
+    c(a(), b())
+
+
+if __name__ == "__main__":
+    execute_pipeline(runner, run_config={})
+```
+#### Airflow
+
 ```
 ```
 
-Prefect
+#### Prefect
+
 ```
 ```
 

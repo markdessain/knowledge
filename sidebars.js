@@ -7,6 +7,8 @@ module.exports = {
     'Principles': [
       'principles/data-pipelines',
       'principles/events',
+      'principles/time',
+      'principles/environments',
     ],
     'Data': [
       'data/dbt',
@@ -25,6 +27,8 @@ module.exports = {
       'languages/sql',
       'languages/scala',
       'languages/golang',
+      'languages/java',
+      'languages/javascript',
     ],
     'Tools': [
       'tools/jq',
@@ -42,6 +46,9 @@ module.exports = {
     ],
     'Interviews': [
       'interviews/engineer',
+    ],
+    'Project Management': [
+      'project-management/epics',
     ],
   },
 };
