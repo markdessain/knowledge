@@ -120,7 +120,6 @@ The time between events could separate events into groups, such as page views wi
     end
     gap2 -- ... 1 hour gap ... --> gap3;
 `}/>
-
 </div>
 
 ## Stitching Events Together
