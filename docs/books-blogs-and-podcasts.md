@@ -6,6 +6,8 @@ title: Books, Blogs and More
 
 ## Books
 
+- [The Manager's Path](https://www.goodreads.com/book/show/33369254-the-manager-s-path)
+
 ## Blogs
 
 ## Podcasts
