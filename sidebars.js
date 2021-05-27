@@ -49,6 +49,7 @@ module.exports = {
     ],
     'Project Management': [
       'project-management/epics',
+      'project-management/done',
     ],
   },
 };
