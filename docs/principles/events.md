@@ -4,8 +4,53 @@ title: Events
 ---
 
 import Mermaid from '@theme/Mermaid';
+import LayoutFlow from '@theme/Reactflow';
+
+import ReactFlow from 'react-flow-renderer';
+
+
+## Graph
+
+
+export const elements = [
+  {
+    id: '1',
+    type: 'input', // input node
+    data: { label: 'Input Node' },
+    position: { x: 0, y: 0 },
+  },
+  // default node
+  {
+    id: '2',
+    // you can also pass a React component as a label
+    data: { label: <div>Default Node</div> },
+    position: { x: 0, y: 0 },
+  },
+  {
+    id: '3',
+    type: 'output', // output node
+    data: { label: 'Output Node' },
+    position: { x: 0, y: 0 },
+  },
+  {
+    id: '4',
+    type: 'input', // input node
+    data: { label: 'Input Node' },
+    position: { x: 0, y: 0 },
+  },
+  // animated edge
+  { id: 'e2-4', source: '4', target: '2' },
+  { id: 'e1-2', source: '1', target: '2', animated: true },
+  { id: 'e2-3', source: '2', target: '3' },
+];
+
+
+<LayoutFlow  elements={elements} direction="TB" />
+
 
 ## Introduction
+
+
 
 Events are the most raw level of data that can be captured to display activity for a given entity. They describe what actions have been taken and when they occurred. A common example is a user click stream which is a timeline of all the actions performed by a given user on a website. Here is an example of how a user could browse through the website: (each box is an event)
 
