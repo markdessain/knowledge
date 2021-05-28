@@ -13,7 +13,7 @@ It is not as simple as defining a single Definition of Done as tasks often fall 
 
 ### Research and Academic
 
-Research tasks are based around performing studies and producing a thesis or white paper around the results. A end customer will gain no benefit from a research project but instead these are useful to be used internally within Maersk.
+Research tasks are based around performing studies and producing a thesis or white paper around the results. A end customer will gain no benefit from a research project but instead these are useful to be used internally within the company.
 
 Typically once some research has been completed it can be acted upon at a later point in time.
 
