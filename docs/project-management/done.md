@@ -44,3 +44,14 @@ Deliverables are tasks which once released give a clear benefit to our end users
 - [x] Build pipeline is green
 - [x] Peer reviewed and the technical approach approved by a team member
 - [x] Signed off by the requester and / or the product owner
+
+### Governance
+
+Many external parties have an interest in a project from a governance point of view, this could be in the form of an audit or a architectural review to ensure that the project is in a sound condition. The outcome often is a set of actions but has no immediate impact on the customers.
+
+**Definition of Done**
+- [x] Listed criteria that needs to be met
+- [x] A thumbs up or thumbs down
+- [x] Documentation on what was checked
+- [x] Signed off by the governing body and the product owner
+- [x] Next actions defined along with severity
