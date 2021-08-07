@@ -50,6 +50,7 @@ module.exports = {
     'Project Management': [
       'project-management/epics',
       'project-management/done',
+      'project-management/proposals-and-decisions',
     ],
   },
 };
