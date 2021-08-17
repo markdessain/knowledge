@@ -112,3 +112,35 @@ echo "[1,2,3,4,5,6]" | jq ".[-2:]"
   6
 ]
 ```
+
+### Filtering on a condition
+
+Filtering using a `==`, `>=`, `<=`, `>` or `<`.
+
+```bash
+echo '{"items": [{"id":1, "name": "a", "ignore": "me"},{"id":2, "name": "b"},{"id":3, "name": "c"}]}' | jq ".items[] | {id, name} | select( .id >= 2)"
+```
+
+```bash
+{
+  "id": 2,
+  "name": "b"
+}
+{
+  "id": 3,
+  "name": "c"
+}
+```
+
+Filtering using `contains`.
+
+```bash
+echo '{"items": [{"id":1, "name": "a", "ignore": "me"},{"id":2, "name": "b"},{"id":3, "name": "c"}]}' | jq ".items[] | {id, name}" | jq '. | select( .name | contains("b"))'
+```
+
+```bash
+{
+  "id": 2,
+  "name": "b"
+}
+```
