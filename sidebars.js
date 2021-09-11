@@ -32,6 +32,7 @@ module.exports = {
     ],
     'Tools': [
       'tools/jq',
+      'tools/graphviz',
     ],
     'Devops': [
       'devops/azure',
