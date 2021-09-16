@@ -9,6 +9,7 @@ module.exports = {
       'principles/events',
       'principles/time',
       'principles/environments',
+      'principles/understandability'
     ],
     'Data': [
       'data/dbt',
