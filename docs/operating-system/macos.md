@@ -27,17 +27,22 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 ## Security
 
+```bash
 brew install --cask authy
 brew install --cask keybase
 brew install rsc_2fa
+```
 
 ## Productivity
 
+```bash
 brew install --cask raycast
 brew install --cask loom
+```
 
 ## Development Tools
 
+```bash
 brew install --cask iterm2
 brew install zsh
 brew install --cask intellij-idea
@@ -56,6 +61,7 @@ brew install docker
 brew install docker-compose
 brew install graphviz
 brew install jq
+```
 
 ## Previous Instructions
 
