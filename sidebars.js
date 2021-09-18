@@ -34,6 +34,7 @@ module.exports = {
     'Tools': [
       'tools/jq',
       'tools/graphviz',
+      'tools/git',
     ],
     'Devops': [
       'devops/azure',

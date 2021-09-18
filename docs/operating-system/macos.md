@@ -49,7 +49,6 @@ brew install zsh
 brew install --cask intellij-idea
 brew install --cask goland
 brew install --cask pycharm
-brew install --cask github
 brew install --cask multipass
 brew install --cask virtualbox
 brew install --cask docker
@@ -62,6 +61,7 @@ brew install docker
 brew install docker-compose
 brew install graphviz
 brew install jq
+brew install gh
 ```
 
 ## Previous Instructions
