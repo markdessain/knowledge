@@ -17,14 +17,6 @@ Install homebrew:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Install zsh
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-
 ## Security
 
 ```bash
@@ -55,6 +47,7 @@ brew install --cask docker
 brew install --cask visual-studio-code
 brew install go@1.17
 brew install openjdk@11
+brew install node@16
 brew install azure-cli
 brew install git
 brew install docker
@@ -62,6 +55,22 @@ brew install docker-compose
 brew install graphviz
 brew install jq
 brew install gh
+```
+
+## Extras
+
+Install zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+Install Node Red
+
+```bash
+npm install -g node-red
 ```
 
 ## Previous Instructions
