@@ -38,6 +38,7 @@ brew install rsc_2fa
 ```bash
 brew install --cask raycast
 brew install --cask loom
+brew install --cask chromium
 ```
 
 ## Development Tools
