@@ -31,6 +31,7 @@ brew install rsc_2fa
 brew install --cask raycast
 brew install --cask loom
 brew install --cask chromium
+brew install --cask skype
 ```
 
 ## Development Tools
@@ -55,6 +56,8 @@ brew install docker-compose
 brew install graphviz
 brew install jq
 brew install gh
+brew tap adoptopenjdk/openjdk
+brew install --cask adoptopenjdk11
 ```
 
 ## Extras

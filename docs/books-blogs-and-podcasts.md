@@ -21,3 +21,8 @@ title: Books, Blogs and More
 - [Machine Learning - Andrew Ng](https://www.coursera.org/learn/machine-learning)
 - [Writing Skills for Engineering Leaders](https://www.coursera.org/learn/engineering-writing/)
 - [Site Reliability Engineering: Measuring and Managing Reliability](https://www.coursera.org/learn/site-reliability-engineering-slos/)
+
+## Photos
+
+- [Unsplash](https://unsplash.com/) - Wallpapers
+- [Flaticon](https://www.flaticon.com/authors/special/lineal) - Vector icons
