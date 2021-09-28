@@ -32,6 +32,7 @@ brew install --cask raycast
 brew install --cask loom
 brew install --cask chromium
 brew install --cask skype
+brew install --cask drawio
 ```
 
 ## Development Tools
@@ -46,6 +47,7 @@ brew install --cask multipass
 brew install --cask virtualbox
 brew install --cask docker
 brew install --cask visual-studio-code
+brew install --cask postman
 brew install go@1.17
 brew install openjdk@11
 brew install node@16
@@ -58,6 +60,7 @@ brew install jq
 brew install gh
 brew tap adoptopenjdk/openjdk
 brew install --cask adoptopenjdk11
+brew install --cask microsoft-azure-storage-explorer
 ```
 
 ## Extras
