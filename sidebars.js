@@ -9,7 +9,8 @@ module.exports = {
       'principles/events',
       'principles/time',
       'principles/environments',
-      'principles/understandability'
+      'principles/understandability',
+      'principles/experiments',
     ],
     'Data': [
       'data/dbt',
@@ -35,6 +36,7 @@ module.exports = {
       'tools/jq',
       'tools/graphviz',
       'tools/git',
+      'tools/base64',
     ],
     'Devops': [
       'devops/azure',

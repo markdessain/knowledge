@@ -55,6 +55,7 @@ brew install azure-cli
 brew install git
 brew install docker
 brew install docker-compose
+brew install podman
 brew install graphviz
 brew install jq
 brew install gh
