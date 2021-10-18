@@ -51,6 +51,8 @@ All users should be given an A or a B variant for each experiment. It does not m
 
 If you start to include other stateful attributes like if how many orders they have made or when they last visited the variant will lose its deterministic property.
 
+The assignment of a variant is seperate to if the subject has seen the experiment. 
+
 ## Who Sees the Test
 
 As we have seperated this out, we can now have logic which defines which subjects are shown the test. We may choose to do something like `WHERE subject.country == "UK`
@@ -64,3 +66,81 @@ At the end of the testing period there will be an output such as
 - Group C: 950 subjects / 200 clicks - 21% click rate
 
 The results show it is clear that Group C has the best click through rate.
+
+## Data to Collect
+
+Collecting data from the experiment is the only way to measure what worked and what did not.
+
+Data should include at a bare minimum:
+
+- What subjects are in the experiment?
+- What group is the subject in?
+- What interactions did the subject have?
+- Did the subject complete the goal? and if so what was the gained value?
+
+The value should be a single numerical value, this could be number of items sold, dollar value of the items or something else related to the choose metric.
+
+An Event stream could look like:
+
+```json
+{
+    "event": "subject_assigned_variant",
+    "subject_id": "mark",
+    "test_id": "blog_test",
+    "variant": "a"
+}
+```
+
+```json
+{
+    "event": "subject_enters_test",
+    "subject_id": "mark",
+    "test_id": "blog_test"
+}
+```
+
+```json
+{
+    "event": "test_interaction",
+    "subject_id": "mark",
+    "test_id": "blog_test",
+    "payload": {
+        "type": "button_hover",
+        "button_id": "button_abc"
+    }
+}
+```
+
+```json
+{
+    "event": "test_interaction",
+    "subject_id": "mark",
+    "test_id": "blog_test",
+    "payload": {
+        "type": "button_mouse_down",
+        "button_id": "button_abc"
+    }
+}
+```
+
+
+```json
+{
+    "event": "test_interaction",
+    "subject_id": "mark",
+    "test_id": "blog_test",
+    "payload": {
+        "type": "button_mouse_click",
+        "button_id": "abc"
+    }
+}
+```
+
+```json
+{
+    "event": "subject_completes_test",
+    "subject_id": "mark",
+    "test_id": "blog_test",
+    "value": 10 
+}
+```
