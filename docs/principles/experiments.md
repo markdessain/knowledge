@@ -86,39 +86,39 @@ An Event stream could look like:
 {
     "event": "subject_assigned_variant",
     "subject_id": "mark",
-    "test_id": "blog_test",
+    "experiment_id": "blog_test",
     "variant": "a"
 }
 ```
 
 ```json
 {
-    "event": "subject_enters_test",
+    "event": "subject_enters_experiment",
     "subject_id": "mark",
-    "test_id": "blog_test"
+    "experiment_id": "blog_test"
 }
 ```
 
 ```json
 {
-    "event": "test_interaction",
+    "event": "experiment_interaction",
     "subject_id": "mark",
-    "test_id": "blog_test",
+    "experiment_id": "blog_test",
     "payload": {
         "type": "button_hover",
-        "button_id": "button_abc"
+        "button_id": "abc"
     }
 }
 ```
 
 ```json
 {
-    "event": "test_interaction",
+    "event": "experiment_interaction",
     "subject_id": "mark",
-    "test_id": "blog_test",
+    "experiment_id": "blog_test",
     "payload": {
         "type": "button_mouse_down",
-        "button_id": "button_abc"
+        "button_id": "abc"
     }
 }
 ```
@@ -126,9 +126,9 @@ An Event stream could look like:
 
 ```json
 {
-    "event": "test_interaction",
+    "event": "experiment_interaction",
     "subject_id": "mark",
-    "test_id": "blog_test",
+    "experiment_id": "blog_test",
     "payload": {
         "type": "button_mouse_click",
         "button_id": "abc"
@@ -138,9 +138,17 @@ An Event stream could look like:
 
 ```json
 {
-    "event": "subject_completes_test",
+    "event": "subject_completes_experiment",
     "subject_id": "mark",
-    "test_id": "blog_test",
+    "experiment_id": "blog_test",
     "value": 10 
 }
 ```
+
+## Running Multiple Experiments
+
+A company will want to be running multiple experiments at the same time. Otherwise if each experiment takes an average of two weeks you'll only be able to do 26 expierments per year.
+
+To allow us to run multiple experiments we need a way to ensure that they do not conflict with each other. As such if we have a pool of 1000 subjects, when a subject enters a experiment they are removed from that pool. If each experiment needs 100 customers to make a decision, we would be able to run at most 10 experiments at the same time.
+
+Once an experiment has been completed or a subject enters a completed state they can be moved back to the pool ready for the next experiement to run.
