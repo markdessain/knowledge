@@ -57,5 +57,8 @@ module.exports = {
       'project-management/done',
       'project-management/proposals-and-decisions',
     ],
+    'Ideas': [
+      'ideas/blog-posts',
+    ],
   },
 };

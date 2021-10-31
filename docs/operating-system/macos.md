@@ -43,6 +43,7 @@ brew install zsh
 brew install --cask intellij-idea
 brew install --cask goland
 brew install --cask pycharm
+brew install --cask datagrip
 brew install --cask multipass
 brew install --cask virtualbox
 brew install --cask docker

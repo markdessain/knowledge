@@ -20,6 +20,11 @@ module.exports = {
           label: 'GitHub',
           position: 'right',
         },
+        {
+          to: 'blog', 
+          label: 'Blog', 
+          position: 'left'
+        },
       ],
     },
     footer: {
