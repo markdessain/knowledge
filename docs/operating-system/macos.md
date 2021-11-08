@@ -31,6 +31,9 @@ brew install rsc_2fa
 brew install --cask raycast
 brew install --cask loom
 brew install --cask chromium
+brew install --cask google-chrome
+brew install --cask microsoft-outlook
+brew install --cask notion
 brew install --cask skype
 brew install --cask drawio
 ```
