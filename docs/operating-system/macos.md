@@ -66,6 +66,10 @@ brew install gh
 brew tap adoptopenjdk/openjdk
 brew install --cask adoptopenjdk11
 brew install --cask microsoft-azure-storage-explorer
+brew install terraform
+
+brew tap tinygo-org/tools
+brew install tinygo
 ```
 
 ## Extras
