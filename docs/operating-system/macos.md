@@ -67,6 +67,12 @@ brew tap adoptopenjdk/openjdk
 brew install --cask adoptopenjdk11
 brew install --cask microsoft-azure-storage-explorer
 brew install terraform
+brew install superfly/tap/flyctl
+
+brew tap heroku/brew 
+brew install heroku
+
+brew install rust
 
 brew tap tinygo-org/tools
 brew install tinygo
