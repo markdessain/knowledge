@@ -71,8 +71,15 @@ brew install superfly/tap/flyctl
 
 brew tap heroku/brew 
 brew install heroku
-
+brew install upx
+brew install mysql
 brew install rust
+brew install rustup
+brew install wasm-pack
+brew install rustup-init
+brew install awscli
+brew install --cask google-cloud-sdk
+brew install gcutil
 
 brew tap tinygo-org/tools
 brew install tinygo
