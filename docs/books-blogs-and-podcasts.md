@@ -10,6 +10,8 @@ title: Books, Blogs and More
 
 ## Blogs
 
+- [Zach's Engineering Handbook - Thoughts on Product and Engineering](https://thezbook.com/about-this-handbook/)
+
 ## Podcasts
 
 - [Danny in the Valley](https://podcasts.apple.com/gb/podcast/danny-in-the-valley/id1233991021)
