@@ -36,6 +36,7 @@ brew install --cask microsoft-outlook
 brew install --cask notion
 brew install --cask skype
 brew install --cask drawio
+brew install slack
 ```
 
 ## Development Tools
@@ -83,6 +84,17 @@ brew install gcutil
 
 brew tap tinygo-org/tools
 brew install tinygo
+
+brew install postgresql
+brew install postgrest
+brew install golang-migrate
+
+brew install tmux
+brew install overmind
+
+brew install ffmpeg  
+brew install youtube-dl
+brew install yt-dlp/taps/yt-dlp 
 ```
 
 ## Extras
