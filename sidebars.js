@@ -37,6 +37,7 @@ module.exports = {
       'tools/graphviz',
       'tools/git',
       'tools/base64',
+      'tools/proxy',
     ],
     'Devops': [
       'devops/azure',
