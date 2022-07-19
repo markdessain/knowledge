@@ -36,7 +36,7 @@ The simplest example is to use curl
 
 ```go
 
-proxyUrl, err := url.Parse(<PROXY_ADDRESS>:<PROXY_PORT>)
+proxyUrl, err := url.Parse(http://<PROXY_ADDRESS>:<PROXY_PORT>)
 if err != nil {
     log.Fatal(err)
 }
@@ -50,3 +50,19 @@ if err != nil {
 
 _, err = client.Do(req)
 ``` 
+
+## Python
+
+```python
+
+import requests
+
+proxies = {
+   'http': 'http://<PROXY_ADDRESS>:<PROXY_PORT>',
+   'https': 'http://<PROXY_ADDRESS>:<PROXY_PORT>',
+}
+
+response = requests.post('https://www.google.com', proxies=proxies)
+
+
+```

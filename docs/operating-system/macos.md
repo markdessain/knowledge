@@ -69,7 +69,6 @@ brew install --cask adoptopenjdk11
 brew install --cask microsoft-azure-storage-explorer
 brew install terraform
 brew install superfly/tap/flyctl
-
 brew tap heroku/brew 
 brew install heroku
 brew install upx
@@ -81,20 +80,20 @@ brew install rustup-init
 brew install awscli
 brew install --cask google-cloud-sdk
 brew install gcutil
-
 brew tap tinygo-org/tools
 brew install tinygo
-
 brew install postgresql
 brew install postgrest
 brew install golang-migrate
-
 brew install tmux
 brew install overmind
-
 brew install ffmpeg  
 brew install youtube-dl
-brew install yt-dlp/taps/yt-dlp 
+brew install yt-dlp/taps/yt-dlp
+brew install --cask ngrok
+brew install sqlc
+brew install atlas
+brew install k9s
 ```
 
 ## Extras
@@ -112,43 +111,6 @@ Install Node Red
 ```bash
 npm install -g node-red
 ```
-
-## Previous Instructions
-
-### Brew Packages
-
-```bash
-brew install <NAME>
-```
-
-- azure-cli
-- docker
-- docker-compose
-- go
-- goofys
-- graphviz
-- jq
-- jenv
-- maven
-- node
-- pyenv
-- pyenv-virtualenv
-- ruby
-- sbt
-- scala
-- yarn
-- vim
-- sqlite
-- postgresql
-
-### Brew Casks
-
-```bash
-brew install --cask <NAME>
-```
-
-- java11
-- java16
 
 ### Applications
 
