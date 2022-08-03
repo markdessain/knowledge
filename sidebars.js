@@ -11,6 +11,7 @@ module.exports = {
       'principles/environments',
       'principles/understandability',
       'principles/experiments',
+      'principles/application-lifecycle',
     ],
     'Data': [
       'data/dbt',
@@ -35,6 +36,7 @@ module.exports = {
     'Tools': [
       'tools/jq',
       'tools/graphviz',
+      'tools/pgdump',
       'tools/git',
       'tools/base64',
       'tools/proxy',
