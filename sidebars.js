@@ -38,6 +38,7 @@ module.exports = {
       'tools/graphviz',
       'tools/pgdump',
       'tools/git',
+      'tools/github',
       'tools/base64',
       'tools/proxy',
     ],
