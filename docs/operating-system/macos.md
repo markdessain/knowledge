@@ -94,6 +94,9 @@ brew install --cask ngrok
 brew install sqlc
 brew install atlas
 brew install k9s
+brew install mkcert
+brew install cocoapods
+brew install --cask flutter
 ```
 
 ## Extras
