@@ -48,6 +48,7 @@ module.exports = {
       'devops/nomad',
       'devops/kubernetes',
       'devops/git',
+      'devops/terraform',
     ],
     'Operating System': [
       'operating-system/macos',

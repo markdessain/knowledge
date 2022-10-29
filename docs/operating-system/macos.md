@@ -97,6 +97,7 @@ brew install k9s
 brew install mkcert
 brew install cocoapods
 brew install --cask flutter
+brew install helm@2
 ```
 
 ## Extras
