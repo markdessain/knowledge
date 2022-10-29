@@ -57,7 +57,7 @@ module "hello_world" {
 }
 ```
 
-# For Loops
+## For Loops
 
 ```terraform
 resource "azurerm_eventhub" "topics" {
@@ -79,7 +79,7 @@ module.hello_world.name
 azurerm_eventhub.topics["ux"]
 ```
 
-# Maps
+## Maps
 
 ```terraform
 resource "azurerm_linux_function_app" "app" {
